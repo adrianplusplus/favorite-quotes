@@ -9,8 +9,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class QuotePage {
 
 
-  onAddToFavorite(){
 
-  }
 
 }
