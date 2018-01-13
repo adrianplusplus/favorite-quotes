@@ -22,4 +22,8 @@ export class QuotePage {
     console.log('ionViewDidLoad QuotePage');
   }
 
+  onAddToFavorite(){
+
+  }
+
 }
