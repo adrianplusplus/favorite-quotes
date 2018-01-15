@@ -16,8 +16,10 @@
   <ion-list>
     <ion-item-sliding
       *ngFor="let quote of quotes">
+      <!--[color]="getBackground()"-->
       <ion-item
         color="quoteBackground"
+        [ngClass]="{'alt':isAltBackground()}"
         (click)="onViewQuote(quote)">
         <h2>{{quote.person}}</h2>
         <p>{{quote.text}}</p>
