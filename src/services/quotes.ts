@@ -11,15 +11,21 @@ export class QuotesService {
   }
 
   removeQuoteFromFavorites(quote: Quote) {
-    const position = this.favoriteQuotes.findIndex((quoteEl: Quote)=> {
+    const position = this.favoriteQuotes.findIndex((quoteEl: Quote) => {
       return quoteEl.id == quote.id;
     })
 
-    this.favoriteQuotes.splice(position,1);
+    this.favoriteQuotes.splice(position, 1);
   }
 
-  getFavoriteQuotes(){
+  getFavoriteQuotes() {
     return this.favoriteQuotes.slice();
+  }
+
+  isQuoteFavorite(quote: Quote) {
+    return this.favoriteQuotes.find((quoteEl: Quote) => {
+      return  quoteEl.id == quote.id;
+    });
   }
 
 }
