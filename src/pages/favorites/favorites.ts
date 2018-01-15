@@ -18,6 +18,7 @@ export class FavoritesPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavoritesPage');
+
   }
 
   ionViewWillEnter() {
@@ -30,14 +31,18 @@ export class FavoritesPage {
     modal.onDidDismiss(
       (remove: boolean) => {
         if (remove)
-          this.quotesService.removeQuoteFromFavorites(quote);
-        //this.quotes = this.quotesService.getFavoriteQuotes()
-        const position = this.quotes.findIndex((quoteEl: Quote) => {
-          return quoteEl.id == quote.id;
-        });
-        this.quotes.splice(position, 1);
+          this.onRemoveFromFavorites(quote);
       });
 
+  }
+
+  onRemoveFromFavorites(quote:Quote){
+    this.quotesService.removeQuoteFromFavorites(quote);
+    //this.quotes = this.quotesService.getFavoriteQuotes()
+    const position = this.quotes.findIndex((quoteEl: Quote) => {
+      return quoteEl.id == quote.id;
+    });
+    this.quotes.splice(position, 1);
   }
 
 }
